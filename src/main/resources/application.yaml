@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    banner-mode: off
+
+logging:
+  level:
+    root: INFO
+    org.zalando.logbook: TRACE
+
+#logbook:
+#  format:
+#    style: http
+#  write:
+#    level: TRACE

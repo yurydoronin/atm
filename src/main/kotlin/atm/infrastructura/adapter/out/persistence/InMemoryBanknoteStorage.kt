@@ -1,0 +1,32 @@
+package atm.infrastructura.adapter.out.persistence
+
+import atm.core.application.port.out.BanknoteBalancePort
+import atm.core.application.port.out.BanknoteLoaderPort
+import atm.core.application.port.out.BanknoteWithdrawPort
+import atm.core.domain.Banknote
+import java.util.*
+
+class InMemoryBanknoteStorage :
+    BanknoteLoaderPort,
+    BanknoteWithdrawPort,
+    BanknoteBalancePort {
+
+    /**
+     * Хранилище банкнот в банкомате (Banknote storage in an ATM)
+     */
+    private val storage = EnumMap<Banknote, Int>(Banknote::class.java)
+
+    override fun add(banknotes: Map<Banknote, Int>) {
+        banknotes.forEach { (banknote, amount) ->
+            storage[banknote] = (storage[banknote] ?: 0) + amount
+        }
+    }
+
+    override fun remove(banknotes: Map<Banknote, Int>) {
+        banknotes.forEach { (banknote, amount) ->
+            storage[banknote] = (storage[banknote] ?: 0) - amount
+        }
+    }
+
+    override fun getAll() = storage
+}

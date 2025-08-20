@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <springProperty scope="context" name="LOG_LEVEL_ROOT" source="logging.level.root"/>
+    <springProperty scope="context" name="LOG_LEVEL_LOGBOOK" source="logging.level.org.zalando.logbook"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) [%thread] %cyan(%logger{36}) – %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Берём уровень root из application.yml -->
+    <root level="${LOG_LEVEL_ROOT:-INFO}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <!-- Берём уровень logbook из application.yml -->
+    <logger name="org.zalando.logbook" level="${LOG_LEVEL_LOGBOOK:-INFO}"/>
+</configuration>
