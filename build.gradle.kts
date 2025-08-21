@@ -16,6 +16,8 @@ dependencies {
     // Spring
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // Logging
     implementation("org.zalando:logbook-spring-boot-starter:3.12.2")
 
     testImplementation(kotlin("test"))

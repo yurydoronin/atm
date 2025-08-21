@@ -1,13 +1,6 @@
 package atm.api.adapter.`in`.web
 
-import atm.core.application.dto.commands.LoadBanknotesCommand
-import atm.core.application.dto.commands.WithdrawMoneyCommand
-import atm.core.application.dto.results.BalanceResult
-import atm.core.application.dto.results.LoadBanknotesResult
-import atm.core.application.dto.results.WithdrawMoneyResult
-import atm.core.application.port.`in`.GetBalanceUseCase
-import atm.core.application.port.`in`.LoadBanknotesUseCase
-import atm.core.application.port.`in`.WithdrawMoneyUseCase
+import atm.core.application.port.`in`.*
 import org.springframework.web.bind.annotation.*
 
 @RestController

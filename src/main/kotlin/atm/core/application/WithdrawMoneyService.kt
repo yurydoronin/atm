@@ -1,7 +1,7 @@
 package atm.core.application
 
-import atm.core.application.dto.commands.WithdrawMoneyCommand
-import atm.core.application.dto.results.WithdrawMoneyResult
+import atm.core.application.port.`in`.WithdrawMoneyCommand
+import atm.core.application.port.`in`.WithdrawMoneyResult
 import atm.core.application.port.`in`.WithdrawMoneyUseCase
 import atm.core.application.port.out.BanknoteBalancePort
 import atm.core.application.port.out.BanknoteWithdrawPort
@@ -65,7 +65,7 @@ internal class WithdrawMoneyService(
         }
 
         // Снимаем купюры из банкомата
-        withdraw.remove(dispensed)
+        withdraw.withdraw(dispensed)
 
         return WithdrawMoneyResult(
             message = "Выдано ${command.amount} RUB",

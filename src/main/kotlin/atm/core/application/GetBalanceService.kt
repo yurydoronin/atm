@@ -1,6 +1,6 @@
 package atm.core.application
 
-import atm.core.application.dto.results.BalanceResult
+import atm.core.application.port.`in`.BalanceResult
 import atm.core.application.port.`in`.GetBalanceUseCase
 import atm.core.application.port.out.BanknoteBalancePort
 

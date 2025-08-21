@@ -3,7 +3,6 @@ package atm.core.application.port.out
 import atm.core.domain.Banknote
 
 interface BanknoteBalancePort {
-
     /**
      * Запрос состояния хранилища банкомата
      */

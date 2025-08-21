@@ -1,4 +1,4 @@
-package atm.infrastructura.adapter.out.persistence
+package atm.infrastructure.adapter.out.persistence
 
 import atm.core.application.port.out.BanknoteBalancePort
 import atm.core.application.port.out.BanknoteLoaderPort
@@ -16,13 +16,13 @@ class InMemoryBanknoteStorage :
      */
     private val storage = EnumMap<Banknote, Int>(Banknote::class.java)
 
-    override fun add(banknotes: Map<Banknote, Int>) {
+    override fun load(banknotes: Map<Banknote, Int>) {
         banknotes.forEach { (banknote, amount) ->
             storage[banknote] = (storage[banknote] ?: 0) + amount
         }
     }
 
-    override fun remove(banknotes: Map<Banknote, Int>) {
+    override fun withdraw(banknotes: Map<Banknote, Int>) {
         banknotes.forEach { (banknote, amount) ->
             storage[banknote] = (storage[banknote] ?: 0) - amount
         }

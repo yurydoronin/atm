@@ -9,7 +9,7 @@ import atm.core.application.port.`in`.WithdrawMoneyUseCase
 import atm.core.application.port.out.BanknoteBalancePort
 import atm.core.application.port.out.BanknoteLoaderPort
 import atm.core.application.port.out.BanknoteWithdrawPort
-import atm.infrastructura.adapter.out.persistence.InMemoryBanknoteStorage
+import atm.infrastructure.adapter.out.persistence.InMemoryBanknoteStorage
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
