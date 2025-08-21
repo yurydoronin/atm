@@ -16,6 +16,3 @@ value class AmountOfMoney(val amount: Int) {
     operator fun compareTo(other: AmountOfMoney): Int = this.amount.compareTo(other.amount)
 
 }
-
-
-
