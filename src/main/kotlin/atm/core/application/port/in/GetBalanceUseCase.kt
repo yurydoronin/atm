@@ -10,6 +10,4 @@ interface GetBalanceUseCase {
 /**
  * (DTO) Сумма (остаток) в банкомате (Total amount in an ATM)
  */
-data class BalanceResult(
-    val totalBalance: String
-)
+data class BalanceResult(val totalBalance: String)

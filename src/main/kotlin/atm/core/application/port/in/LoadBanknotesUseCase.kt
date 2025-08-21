@@ -12,9 +12,7 @@ interface LoadBanknotesUseCase {
 /**
  * (DTO) Команда на загрузку купюр в банкомат
  */
-data class LoadBanknotesCommand(
-    val banknotes: Map<Banknote, Int>
-)
+data class LoadBanknotesCommand(val banknotes: Map<Banknote, Int>)
 
 /**
  * (DTO) Сумма закруженных купюр в банкомат (Total amount in an ATM)

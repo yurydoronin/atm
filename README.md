@@ -2,9 +2,8 @@
 
 ### Приложение написано в стиле чистой архитектуры (гексагональной)
 
-### Тестовые данные для контрактов
-
-http://localhost:8080/atm/load
+### Операции: 
+- Загрузить купюры в банкомат http://localhost:8080/atm/load
 ```json
 {
   "banknotes": {
@@ -18,39 +17,10 @@ http://localhost:8080/atm/load
   }
 }
 ```
-http://localhost:8081/atm/withdraw
-
-1.
+- Снять нужную сумму денег в банкомате http://localhost:8081/atm/withdraw
 ```json
 {
-  "amount": 1900
+  "amountOfMoney": 1900
 }
 ```
-
-2.
-```json
-{
-"amount": 2750
-}
-```
-
-3.
-```json
-{
-"amount": 250
-}
-```
-
-4.
-```json
-{
-"amount": 15000
-}
-```
-
-5.
-```json
-{
-"amount": 0
-}
-```
+- Запросить баланс http://localhost:8080/atm/load

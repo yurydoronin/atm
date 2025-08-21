@@ -4,15 +4,15 @@ package atm.core.domain
  * Value-object
  */
 @JvmInline
-value class AmountOfMoney(val amount: Int) {
+value class Money(val amount: Int) {
 
     init {
         require(amount >= 0) { "Сумма не может быть отрицательной" }
     }
 
-    operator fun plus(other: AmountOfMoney) = AmountOfMoney(this.amount + other.amount)
-    operator fun minus(other: AmountOfMoney) = AmountOfMoney(this.amount - other.amount)
-    operator fun times(multiplier: Int) = AmountOfMoney(this.amount * multiplier)
-    operator fun compareTo(other: AmountOfMoney): Int = this.amount.compareTo(other.amount)
+    operator fun plus(other: Money) = Money(amount + other.amount)
+    operator fun minus(other: Money) = Money(amount - other.amount)
+    operator fun times(multiplier: Int) = Money(amount * multiplier)
+    operator fun compareTo(other: Money): Int = amount.compareTo(other.amount)
 
 }

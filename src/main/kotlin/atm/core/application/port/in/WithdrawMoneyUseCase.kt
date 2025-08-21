@@ -1,6 +1,7 @@
 package atm.core.application.port.`in`
 
 import atm.core.domain.Banknote
+import atm.core.domain.Money
 
 interface WithdrawMoneyUseCase {
     /**
@@ -12,7 +13,9 @@ interface WithdrawMoneyUseCase {
 /**
  * (DTO) Команда на снятие денег с банкомата
  */
-data class WithdrawMoneyCommand(val amount: Int)
+data class WithdrawMoneyCommand(val amountOfMoney: Int) {
+    val money: Money by lazy { Money(amountOfMoney) }
+}
 
 /**
  * (DTO) Результат операции снятия денег с банкомата
