@@ -25,8 +25,10 @@ class AtmConfiguration {
         LoadBanknotesService(storage)
 
     @Bean
-    fun withdrawMoneyService(storage: BanknoteWithdrawPort, balance: BanknoteBalancePort): WithdrawMoneyUseCase =
-        WithdrawMoneyService(storage, balance)
+    fun withdrawMoneyService(
+        storage: BanknoteWithdrawPort,
+        balance: BanknoteBalancePort,
+    ): WithdrawMoneyUseCase = WithdrawMoneyService(storage, balance)
 
     @Bean
     fun getBalanceService(balance: BanknoteBalancePort): GetBalanceUseCase =

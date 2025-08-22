@@ -10,5 +10,5 @@ enum class Banknote(val nominal: Int) {
     B500(500),
     B200(200),
     B100(100),
-    B50(50)
+    B50(50),
 }

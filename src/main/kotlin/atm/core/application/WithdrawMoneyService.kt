@@ -11,7 +11,7 @@ import java.util.*
 
 internal class WithdrawMoneyService(
     private val withdraw: BanknoteWithdrawPort,
-    private val balance: BanknoteBalancePort
+    private val balance: BanknoteBalancePort,
 ) : WithdrawMoneyUseCase {
 
     // Используется жадный алгоритм (A greedy algorithm is used)

@@ -24,5 +24,5 @@ data class WithdrawMoneyCommand(val amountOfMoney: Int) {
  */
 data class WithdrawMoneyResult(
     val message: String,
-    val dispensed: Map<Banknote, Int> = emptyMap()
+    val dispensed: Map<Banknote, Int> = emptyMap(),
 )

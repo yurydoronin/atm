@@ -10,21 +10,20 @@ class InMemoryBanknoteStorage :
     BanknoteLoaderPort,
     BanknoteWithdrawPort,
     BanknoteBalancePort {
-
     /**
      * Хранилище банкнот в банкомате (Banknote storage in an ATM)
      */
-    private val storage = EnumMap<Banknote, Int>(Banknote::class.java)
+    private val storage = EnumMap<Banknote, Int>(Banknote::class.java).withDefault { 0 }
 
     override fun load(banknotes: Map<Banknote, Int>) {
         banknotes.forEach { (banknote, amount) ->
-            storage[banknote] = (storage[banknote] ?: 0) + amount
+            storage[banknote] = storage.getValue(banknote) + amount
         }
     }
 
     override fun withdraw(banknotes: Map<Banknote, Int>) {
         banknotes.forEach { (banknote, amount) ->
-            storage[banknote] = (storage[banknote] ?: 0) - amount
+            storage[banknote] = storage.getValue(banknote) - amount
         }
     }
 
