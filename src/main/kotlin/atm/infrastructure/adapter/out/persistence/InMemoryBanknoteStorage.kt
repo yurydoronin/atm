@@ -13,17 +13,20 @@ class InMemoryBanknoteStorage :
     /**
      * Хранилище банкнот в банкомате (Banknote storage in an ATM)
      */
-    private val storage = EnumMap<Banknote, Int>(Banknote::class.java).withDefault { 0 }
+    private val storage = EnumMap<Banknote, Int>(Banknote::class.java)
 
     override fun load(banknotes: Map<Banknote, Int>) {
         banknotes.forEach { (banknote, amount) ->
-            storage[banknote] = storage.getValue(banknote) + amount
+            storage[banknote] = storage.getOrPut(banknote) { 0 } + amount
         }
     }
 
     override fun withdraw(banknotes: Map<Banknote, Int>) {
         banknotes.forEach { (banknote, amount) ->
-            storage[banknote] = storage.getValue(banknote) - amount
+            val noteInStorage = storage.getValue(banknote)
+            if (noteInStorage > 0 && amount <= noteInStorage) {
+                storage[banknote] = noteInStorage - amount
+            }
         }
     }
 

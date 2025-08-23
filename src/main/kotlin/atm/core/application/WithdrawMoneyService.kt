@@ -14,7 +14,7 @@ internal class WithdrawMoneyService(
     private val balance: BanknoteBalancePort,
 ) : WithdrawMoneyUseCase {
 
-    // Используется жадный алгоритм (A greedy algorithm is used)
+    // Используется жадный алгоритм (Using a greedy algorithm)
     // В реальном банкомате скорее всего используется динамическое программирование (DP)
     override fun withdraw(command: WithdrawMoneyCommand): WithdrawMoneyResult {
         // Валидация входных данных
