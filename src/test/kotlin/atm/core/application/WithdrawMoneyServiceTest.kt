@@ -21,7 +21,7 @@ class WithdrawMoneyServiceTest {
     fun `should return error when amount is zero or negative`() {
         val result = service.withdraw(WithdrawMoneyCommand(0))
 
-        assertEquals("Невозможно снять сумму 0 или меньше", result.message)
+        assertEquals("Невозможно снять сумму 0", result.message)
     }
 
     @Test

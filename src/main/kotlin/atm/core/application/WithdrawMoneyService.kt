@@ -17,18 +17,16 @@ internal class WithdrawMoneyService(
     // Используется жадный алгоритм (Using a greedy algorithm)
     // В реальном банкомате скорее всего используется динамическое программирование (DP)
     override fun withdraw(command: WithdrawMoneyCommand): WithdrawMoneyResult {
+        val moneyToWithdraw = command.money
+
         // Валидация входных данных
-        if (command.money.amount <= 0) {
-            return WithdrawMoneyResult(message = "Невозможно снять сумму 0 или меньше")
+        if (moneyToWithdraw.amount == 0) {
+            return WithdrawMoneyResult(message = "Невозможно снять сумму 0")
         }
-
-        val moneyToWithdraw = Money(command.money.amount)
-
         // Проверяем достаточно ли средств
         if (totalBalance() < moneyToWithdraw) {
             return WithdrawMoneyResult(message = "В банкомате недостаточно средств")
         }
-
         /*
         Сортируем банкноты по номиналу (по убыванию).
         Сортировка по убыванию позволяет сначала использовать банкноты с наибольшим номиналом.
@@ -60,14 +58,14 @@ internal class WithdrawMoneyService(
         // Если после прохода по всем номиналам remaining всё еще больше нуля,
         // это означает, что запрошенную сумму выдать невозможно (не хватает купюр).
         if (remaining.amount > 0) {
-            return WithdrawMoneyResult(message = "Невозможно снять запрашиваемую сумму ${command.money.amount} RUB")
+            return WithdrawMoneyResult(message = "Невозможно снять запрашиваемую сумму ${moneyToWithdraw.amount} RUB")
         }
 
         // Снимаем купюры из банкомата
         withdraw.withdraw(dispensed)
 
         return WithdrawMoneyResult(
-            message = "Выдано ${command.money.amount} RUB",
+            message = "Выдано ${moneyToWithdraw.amount} RUB",
             dispensed = dispensed
         )
     }
