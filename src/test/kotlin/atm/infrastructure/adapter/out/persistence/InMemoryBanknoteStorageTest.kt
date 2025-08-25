@@ -27,8 +27,6 @@ class InMemoryBanknoteStorageTest {
     fun `getAll should return current state`() {
         storage.load(mapOf(Banknote.B50 to 4))
 
-        val all = storage.getAll()
-
-        assertEquals(4, all[Banknote.B50])
+        assertEquals(4, storage.getAll()[Banknote.B50])
     }
 }

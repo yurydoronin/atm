@@ -41,14 +41,13 @@ internal class WithdrawMoneyService(
         val dispensed = EnumMap<Banknote, Int>(Banknote::class.java)
 
         // Перебирает все возможные номиналы банкнот, чтобы вычислить, сколько купюр каждого номинала нужно выдать,
-        // исходя из запрашиваемой суммы (remainingAmount) и количества купюр в хранилище (storage).
+        // исходя из запрашиваемой суммы (remaining) и количества купюр в хранилище (storage).
         for (banknote in sortedBanknotes) {
             // Количество конкретной банкноты в хранилище
             val available = balance.getAll().getOrDefault(banknote, 0)
-            // Запрашиваемая сумма (remainingAmount) должна быть больше или равна номиналу банкноты.
-            // И в хранилище должно быть хотя бы одно количество этой банкноты.
             val nominal = Money(banknote.nominal)
-
+            // Запрашиваемая сумма (remaining) должна быть больше или равна номиналу банкноты.
+            // И в хранилище должно быть хотя бы одно количество этой банкноты.
             if (remaining >= nominal && available > 0) {
                 val notesToWithdraw = minOf(remaining.amount / nominal.amount, available)
                 if (notesToWithdraw > 0) {
