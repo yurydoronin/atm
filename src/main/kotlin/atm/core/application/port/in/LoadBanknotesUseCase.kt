@@ -17,4 +17,5 @@ data class LoadBanknotesCommand(val banknotes: Map<Banknote, Int>)
 /**
  * (DTO) Сумма закруженных купюр в банкомат (Total amount in an ATM)
  */
-data class LoadBanknotesResult(val message: String)
+@JvmInline
+value class LoadBanknotesResult(val message: String)

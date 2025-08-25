@@ -10,4 +10,5 @@ interface GetBalanceUseCase {
 /**
  * (DTO) Сумма (остаток) в банкомате (Total amount in an ATM)
  */
-data class BalanceResult(val totalBalance: String)
+@JvmInline
+value class BalanceResult(val totalBalance: String)
