@@ -11,15 +11,11 @@ interface LoadBanknotesUseCase {
 
 /**
  * (DTO) Command to load banknotes into an ATM
- *
- * which is the input model of the use case
  */
 data class LoadBanknotesCommand(val banknotes: Map<Banknote, Int>)
 
 /**
  * (DTO) Total amount in an ATM
- *
- * which is the output model of the use case
  */
 @JvmInline
 value class LoadBanknotesResult(val message: String)

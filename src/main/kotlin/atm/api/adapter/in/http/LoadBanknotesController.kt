@@ -21,15 +21,11 @@ class LoadBanknotesController(
 
 /**
  * (DTO) HTTP-Request to load banknotes into ATM
- *
- * which is the input model of the adapter
  */
 data class LoadBanknotesRequest(val banknotes: Map<String, Int>)
 
 /**
  * (DTO) HTTP-Response containing the amount of notes loaded into the ATM
- *
- * which is the output model of the adapter
  */
 data class LoadBanknotesResponse(val message: String)
 
