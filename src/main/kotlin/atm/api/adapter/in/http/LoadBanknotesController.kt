@@ -34,7 +34,7 @@ data class LoadBanknotesResponse(val message: String)
  */
 fun LoadBanknotesRequest.toCommand(): LoadBanknotesCommand =
     LoadBanknotesCommand(
-        banknotes = banknotes.mapKeys { (nominal, _) -> Banknote.valueOf(nominal) }
+        banknotes = banknotes.mapKeys { (note, _) -> Banknote.fromNominal(note.toInt()) }
     )
 
 /**
