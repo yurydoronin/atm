@@ -1,7 +1,7 @@
 package atm.core.domain
 
 /**
- * Value-object
+ * Strong typing (value-object)
  */
 @JvmInline
 value class Money(val amount: Int) {

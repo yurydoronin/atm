@@ -1,4 +1,4 @@
-package atm.api.adapter.`in`.web
+package atm.api.adapter.`in`.http
 
 import atm.core.application.port.`in`.BalanceResult
 import atm.core.application.port.`in`.GetBalanceUseCase

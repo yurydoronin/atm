@@ -4,18 +4,22 @@ import atm.core.domain.Banknote
 
 interface LoadBanknotesUseCase {
     /**
-     * Загрузить купюры в банкомат (Load banknotes into an ATM)
+     * Load banknotes into an ATM
      */
     fun load(command: LoadBanknotesCommand): LoadBanknotesResult
 }
 
 /**
- * (DTO) Команда на загрузку купюр в банкомат
+ * (DTO) Command to load banknotes into an ATM
+ *
+ * which is the input model of the use case
  */
 data class LoadBanknotesCommand(val banknotes: Map<Banknote, Int>)
 
 /**
- * (DTO) Сумма закруженных купюр в банкомат (Total amount in an ATM)
+ * (DTO) Total amount in an ATM
+ *
+ * which is the output model of the use case
  */
 @JvmInline
 value class LoadBanknotesResult(val message: String)

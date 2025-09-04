@@ -1,4 +1,4 @@
-package atm.api.adapter.`in`.web
+package atm.api.adapter.`in`.http
 
 import atm.core.application.port.`in`.WithdrawMoneyCommand
 import atm.core.application.port.`in`.WithdrawMoneyResult
