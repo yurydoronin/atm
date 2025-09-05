@@ -21,11 +21,11 @@ internal class WithdrawMoneyService(
 
         // Валидация входных данных
         if (moneyToWithdraw.amount == 0) {
-            return WithdrawMoneyResult(message = "Невозможно снять сумму 0")
+            return WithdrawMoneyResult(message = "Unable to withdraw amount 0")
         }
         // Проверяем достаточно ли средств
         if (totalBalance() < moneyToWithdraw) {
-            return WithdrawMoneyResult(message = "В банкомате недостаточно средств")
+            return WithdrawMoneyResult(message = "There are not enough funds in the ATM")
         }
         /*
         Сортируем банкноты по номиналу (по убыванию).
@@ -58,14 +58,14 @@ internal class WithdrawMoneyService(
         // Если после прохода по всем номиналам remaining всё еще больше нуля,
         // это означает, что запрошенную сумму выдать невозможно (не хватает купюр).
         if (remaining.amount > 0) {
-            return WithdrawMoneyResult(message = "Невозможно снять запрашиваемую сумму ${moneyToWithdraw.amount} RUB")
+            return WithdrawMoneyResult(message = "Unable to withdraw requested amount ${moneyToWithdraw.amount} RUB")
         }
 
         // Снимаем купюры из банкомата
         withdraw.withdraw(dispensed)
 
         return WithdrawMoneyResult(
-            message = "Выдано ${moneyToWithdraw.amount} RUB",
+            message = "Dispensed ${moneyToWithdraw.amount} RUB",
             dispensed = dispensed
         )
     }

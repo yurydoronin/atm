@@ -21,7 +21,7 @@ class WithdrawMoneyServiceTest {
     fun `should return error when amount is zero or negative`() {
         val result = service.withdraw(WithdrawMoneyCommand(0))
 
-        assertEquals("Невозможно снять сумму 0", result.message)
+        assertEquals("Unable to withdraw amount 0", result.message)
     }
 
     @Test
@@ -30,7 +30,7 @@ class WithdrawMoneyServiceTest {
 
         val result = service.withdraw(WithdrawMoneyCommand(500))
 
-        assertEquals("В банкомате недостаточно средств", result.message)
+        assertEquals("There are not enough funds in the ATM", result.message)
     }
 
     @Test
@@ -42,7 +42,7 @@ class WithdrawMoneyServiceTest {
 
         val result = service.withdraw(WithdrawMoneyCommand(70))
 
-        assertEquals("Невозможно снять запрашиваемую сумму 70 RUB", result.message)
+        assertEquals("Unable to withdraw requested amount 70 RUB", result.message)
     }
 
     @Test
@@ -54,7 +54,7 @@ class WithdrawMoneyServiceTest {
 
         val result = service.withdraw(WithdrawMoneyCommand(250))
 
-        assertEquals("Выдано 250 RUB", result.message)
+        assertEquals("Dispensed 250 RUB", result.message)
         assertEquals(mapOf(Banknote.B100 to 2, Banknote.B50 to 1), result.dispensed)
 
         verify { withdrawPort.withdraw(result.dispensed) }

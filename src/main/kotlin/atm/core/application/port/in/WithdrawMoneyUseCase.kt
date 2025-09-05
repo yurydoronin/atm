@@ -5,22 +5,22 @@ import atm.core.domain.Money
 
 interface WithdrawMoneyUseCase {
     /**
-     * Снять нужную сумму денег в банкомате (Withdraw the required amount of money from an ATM)
+     * Withdraw the required amount of money from an ATM
      */
     fun withdraw(command: WithdrawMoneyCommand): WithdrawMoneyResult
 }
 
 /**
- * (DTO) Команда на снятие денег с банкомата
+ * (DTO) Command to withdraw money from an ATM
  */
 data class WithdrawMoneyCommand(val amountOfMoney: Int) {
     val money: Money by lazy { Money(amountOfMoney) }
 }
 
 /**
- * (DTO) Результат операции снятия денег с банкомата
+ * (DTO) An ATM withdrawal operation result
  *
- * @property dispensed Информация о том, какие банкноты и в каком количестве банкомат выдал
+ * @property dispensed Information about what banknotes and in what quantities the ATM issued
  */
 data class WithdrawMoneyResult(
     val message: String,
