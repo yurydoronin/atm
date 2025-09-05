@@ -13,7 +13,7 @@ internal class LoadBanknotesService(private val loader: BanknoteLoaderPort) : Lo
         loader.load(banknotes)
 
         return LoadBanknotesResult(
-            message = "Загружено ${total(banknotes)} RUB"
+            message = "Loaded ${total(banknotes)} RUB"
         )
     }
 

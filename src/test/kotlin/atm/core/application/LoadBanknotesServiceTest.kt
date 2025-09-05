@@ -25,7 +25,7 @@ class LoadBanknotesServiceTest {
 
         val result = service.load(command)
 
-        assertEquals("Загружено 500 RUB", result.message)
+        assertEquals("Loaded 500 RUB", result.message)
         verify { loader.load(command.banknotes) }
     }
 }

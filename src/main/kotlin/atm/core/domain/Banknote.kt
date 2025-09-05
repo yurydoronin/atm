@@ -19,8 +19,11 @@ enum class Banknote(val nominal: Int) {
          * @param nominalValue the numeric denomination of the banknote
          * @throws IllegalArgumentException if no banknote exists with the given denomination
          */
-        fun fromNominal(nominalValue: Int): Banknote =
-            entries.find { it.nominal == nominalValue }
-                ?: throw IllegalArgumentException("No banknote with nominal $nominalValue")
+        fun fromNominal(nominalValue: String): Banknote {
+            val value = nominalValue.toIntOrNull()
+                ?: throw IllegalArgumentException("Invalid nominal format: $nominalValue")
+            return entries.find { it.nominal == value }
+                ?: throw IllegalArgumentException("No banknote with nominal $value")
+        }
     }
 }
