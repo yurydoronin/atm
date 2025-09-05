@@ -19,6 +19,6 @@ class AmountOfMoneyTest {
             Money(-1)
         }
 
-        assertEquals("Сумма не может быть отрицательной", exception.message)
+        assertEquals("The amount cannot be negative", exception.message)
     }
 }

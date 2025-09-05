@@ -7,7 +7,7 @@ package atm.core.domain
 value class Money(val amount: Int) {
 
     init {
-        require(amount >= 0) { "Сумма не может быть отрицательной" }
+        require(amount >= 0) { "The amount cannot be negative" }
     }
 
     operator fun plus(other: Money) = Money(amount + other.amount)

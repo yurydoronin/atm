@@ -9,6 +9,6 @@ internal class GetBalanceService(private val balance: BanknoteBalancePort) : Get
     override fun getBalance(): BalanceResult {
         val total = balance.getAll().entries.sumOf { it.key.nominal * it.value }
 
-        return BalanceResult(totalBalance = "Текущий баланс: $total RUB")
+        return BalanceResult(totalBalance = "Current balance: $total RUB")
     }
 }

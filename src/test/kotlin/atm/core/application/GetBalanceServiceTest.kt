@@ -19,6 +19,6 @@ class GetBalanceServiceTest {
 
         val result = service.getBalance()
 
-        assertEquals("Текущий баланс: 500 RUB", result.totalBalance)
+        assertEquals("Current balance: 500 RUB", result.totalBalance)
     }
 }

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/atm")
 class GetBalanceController(
-    private val getBalanceService: GetBalanceUseCase
+    private val getBalanceUseCase: GetBalanceUseCase
 ) {
     @GetMapping("/balance")
-    fun balance(): BalanceResult = getBalanceService.getBalance()
+    fun balance(): BalanceResult = getBalanceUseCase.getBalance()
 }
