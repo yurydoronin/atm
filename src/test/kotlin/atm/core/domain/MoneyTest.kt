@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class AmountOfMoneyTest {
+class MoneyTest {
 
     @Test
     fun `should create Money with non-negative value`() {
