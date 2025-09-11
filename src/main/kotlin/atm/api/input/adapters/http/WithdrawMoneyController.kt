@@ -1,9 +1,8 @@
-package atm.api.adapter.`in`.http
+package atm.api.input.adapters.http
 
-import atm.core.application.port.`in`.WithdrawMoneyCommand
-import atm.core.application.port.`in`.WithdrawMoneyResult
-import atm.core.application.port.`in`.WithdrawMoneyUseCase
-import atm.core.domain.Banknote
+import atm.core.application.ports.input.WithdrawMoneyCommand
+import atm.core.application.ports.input.WithdrawMoneyResult
+import atm.core.application.ports.input.WithdrawMoneyUseCase
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping

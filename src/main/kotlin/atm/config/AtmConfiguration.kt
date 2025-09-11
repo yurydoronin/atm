@@ -3,13 +3,13 @@ package atm.config
 import atm.core.application.GetBalanceService
 import atm.core.application.LoadBanknotesService
 import atm.core.application.WithdrawMoneyService
-import atm.core.application.port.`in`.GetBalanceUseCase
-import atm.core.application.port.`in`.LoadBanknotesUseCase
-import atm.core.application.port.`in`.WithdrawMoneyUseCase
-import atm.core.application.port.out.BanknoteBalancePort
-import atm.core.application.port.out.BanknoteLoaderPort
-import atm.core.application.port.out.BanknoteWithdrawPort
-import atm.infrastructure.adapter.out.persistence.InMemoryBanknoteStorage
+import atm.core.application.ports.input.GetBalanceUseCase
+import atm.core.application.ports.input.LoadBanknotesUseCase
+import atm.core.application.ports.input.WithdrawMoneyUseCase
+import atm.core.application.ports.output.BanknoteBalancePort
+import atm.core.application.ports.output.BanknoteLoaderPort
+import atm.core.application.ports.output.BanknoteWithdrawPort
+import atm.infrastructure.output.adapters.persistence.InMemoryBanknoteStorage
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

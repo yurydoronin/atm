@@ -1,7 +1,7 @@
 package atm.core.application
 
-import atm.core.application.port.`in`.LoadBanknotesCommand
-import atm.core.application.port.out.BanknoteLoaderPort
+import atm.core.application.ports.input.LoadBanknotesCommand
+import atm.core.application.ports.output.BanknoteLoaderPort
 import atm.core.domain.Banknote
 import io.mockk.mockk
 import io.mockk.verify

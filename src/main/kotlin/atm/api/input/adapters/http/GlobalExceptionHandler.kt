@@ -1,4 +1,4 @@
-package atm.api.adapter.`in`.http
+package atm.api.input.adapters.http
 
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice

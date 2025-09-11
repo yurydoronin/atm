@@ -1,4 +1,4 @@
-package atm.infrastructure.adapter.out.persistence
+package atm.infrastructure.output.adapters.persistence
 
 import atm.core.domain.Banknote
 import org.junit.jupiter.api.Assertions.assertEquals

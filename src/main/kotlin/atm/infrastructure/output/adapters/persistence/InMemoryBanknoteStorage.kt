@@ -1,8 +1,8 @@
-package atm.infrastructure.adapter.out.persistence
+package atm.infrastructure.output.adapters.persistence
 
-import atm.core.application.port.out.BanknoteBalancePort
-import atm.core.application.port.out.BanknoteLoaderPort
-import atm.core.application.port.out.BanknoteWithdrawPort
+import atm.core.application.ports.output.BanknoteBalancePort
+import atm.core.application.ports.output.BanknoteLoaderPort
+import atm.core.application.ports.output.BanknoteWithdrawPort
 import atm.core.domain.Banknote
 import java.util.*
 

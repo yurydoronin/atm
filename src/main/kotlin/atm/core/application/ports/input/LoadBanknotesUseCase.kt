@@ -1,4 +1,4 @@
-package atm.core.application.port.`in`
+package atm.core.application.ports.input
 
 import atm.core.domain.Banknote
 

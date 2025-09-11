@@ -1,8 +1,8 @@
 package atm.core.application
 
-import atm.core.application.port.`in`.BalanceResult
-import atm.core.application.port.`in`.GetBalanceUseCase
-import atm.core.application.port.out.BanknoteBalancePort
+import atm.core.application.ports.input.BalanceResult
+import atm.core.application.ports.input.GetBalanceUseCase
+import atm.core.application.ports.output.BanknoteBalancePort
 
 internal class GetBalanceService(private val balance: BanknoteBalancePort) : GetBalanceUseCase {
 

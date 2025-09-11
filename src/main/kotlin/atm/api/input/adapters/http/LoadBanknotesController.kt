@@ -1,8 +1,8 @@
-package atm.api.adapter.`in`.http
+package atm.api.input.adapters.http
 
-import atm.core.application.port.`in`.LoadBanknotesCommand
-import atm.core.application.port.`in`.LoadBanknotesResult
-import atm.core.application.port.`in`.LoadBanknotesUseCase
+import atm.core.application.ports.input.LoadBanknotesCommand
+import atm.core.application.ports.input.LoadBanknotesResult
+import atm.core.application.ports.input.LoadBanknotesUseCase
 import atm.core.domain.Banknote
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

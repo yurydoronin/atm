@@ -1,10 +1,10 @@
 package atm.core.application
 
-import atm.core.application.port.`in`.WithdrawMoneyCommand
-import atm.core.application.port.`in`.WithdrawMoneyResult
-import atm.core.application.port.`in`.WithdrawMoneyUseCase
-import atm.core.application.port.out.BanknoteBalancePort
-import atm.core.application.port.out.BanknoteWithdrawPort
+import atm.core.application.ports.input.WithdrawMoneyCommand
+import atm.core.application.ports.input.WithdrawMoneyResult
+import atm.core.application.ports.input.WithdrawMoneyUseCase
+import atm.core.application.ports.output.BanknoteBalancePort
+import atm.core.application.ports.output.BanknoteWithdrawPort
 import atm.core.domain.Banknote
 import atm.core.domain.Money
 import java.util.*

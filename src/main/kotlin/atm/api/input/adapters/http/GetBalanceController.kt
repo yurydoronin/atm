@@ -1,7 +1,7 @@
-package atm.api.adapter.`in`.http
+package atm.api.input.adapters.http
 
-import atm.core.application.port.`in`.BalanceResult
-import atm.core.application.port.`in`.GetBalanceUseCase
+import atm.core.application.ports.input.BalanceResult
+import atm.core.application.ports.input.GetBalanceUseCase
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController

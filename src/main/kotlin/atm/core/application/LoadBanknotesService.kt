@@ -1,9 +1,9 @@
 package atm.core.application
 
-import atm.core.application.port.`in`.LoadBanknotesCommand
-import atm.core.application.port.`in`.LoadBanknotesResult
-import atm.core.application.port.`in`.LoadBanknotesUseCase
-import atm.core.application.port.out.BanknoteLoaderPort
+import atm.core.application.ports.input.LoadBanknotesCommand
+import atm.core.application.ports.input.LoadBanknotesResult
+import atm.core.application.ports.input.LoadBanknotesUseCase
+import atm.core.application.ports.output.BanknoteLoaderPort
 import atm.core.domain.Banknote
 
 internal class LoadBanknotesService(private val loader: BanknoteLoaderPort) : LoadBanknotesUseCase {

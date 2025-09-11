@@ -1,4 +1,4 @@
-package atm.core.application.port.`in`
+package atm.core.application.ports.input
 
 interface GetBalanceUseCase {
     /**
